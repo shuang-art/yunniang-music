@@ -1,10 +1,42 @@
-# 云娘音乐 (Yunniang Music)
+# 云娘音乐 · Yunniang Music
 
-> 为 Linux 打造的网易云音乐桌面客户端。支持网易云账号登录、**无损 / Hi-Res / 母带音质**、每日推荐、私人雷达、心动模式、私人漫游、歌单广场、排行榜、我喜欢的音乐、收藏的歌单、音乐网盘，以及滚动歌词与桌面歌词。
+**为 Linux 打造的网易云音乐桌面客户端** —— 无损音质 · 每日推荐 · 私人雷达 · 心动模式 · 私人漫游 · 音乐网盘
 
-因为网易云音乐官方从未提供 Linux 安装包，第三方客户端又往往功能残缺或体验粗糙，所以本项目从零实现了一个完整可用的 Linux 原生客户端。
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Linux%20x86__64-informational)](https://github.com)
+[![Electron](https://img.shields.io/badge/Electron-33-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+> 因为网易云音乐官方从未提供 Linux 安装包，第三方客户端又往往功能残缺或体验粗糙，
+> 所以本项目从零实现了一个完整可用的 Linux 原生客户端。
 
 ![登录界面](docs/screenshots/login.png)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/home.png" alt="发现音乐"><br/><sub><b>发现音乐</b></sub></td>
+    <td width="50%"><img src="docs/screenshots/heart.png" alt="心动模式"><br/><sub><b>心动模式</b></sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/cloud.png" alt="音乐网盘"><br/><sub><b>音乐网盘</b></sub></td>
+    <td width="50%"><img src="docs/screenshots/rank.png" alt="排行榜"><br/><sub><b>排行榜</b></sub></td>
+  </tr>
+</table>
+
+---
+
+## ⚠️ 免责声明
+
+**本项目仅供个人学习与技术研究使用，严禁任何商业用途。**
+
+- 本项目**不提供、不存储、不分发**任何音乐内容，所有音乐数据均实时来自网易云音乐官方服务器
+- 音乐版权归**网易云音乐及各版权方**所有
+- 使用本项目可能违反《网易云音乐服务条款》，**由此产生的一切后果由使用者自行承担**
+- 本项目与网易云音乐官方**无任何关联**，"网易云音乐" 是其权利人的商标
+- 请使用你自己的账号，并遵守当地法律法规
+
+如果你喜欢这些音乐，**请支持正版**，购买会员或数字专辑。
 
 ---
 
@@ -319,7 +351,39 @@ npx electron scripts/visual-test.js
 
 ---
 
+---
+
+## 贡献
+
+欢迎提交 Issue 与 PR。
+
+```bash
+git clone <your-fork>
+cd yunniang-music
+npm install
+npm install-scripts approve electron esbuild   # npm 11+ 需要授权安装脚本
+npm run dev
+```
+
+提交前请确保：
+
+```bash
+npx tsc --noEmit     # 零类型错误
+npm run build        # 构建通过
+```
+
+代码风格约定见 [CONVENTIONS.md](CONVENTIONS.md)。
+
+---
+
+## Star History
+
+如果这个项目对你有帮助，欢迎点个 ⭐
+
+---
+
 ## 致谢
 
-- [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) — MIT，提供本地接口层
-- [Electron](https://www.electronjs.org/) / [React](https://react.dev/) / [Vite](https://vitejs.dev/) / [zustand](https://zustand-demo.pmnd.rs/)
+- [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi) — MIT，本地接口层
+- [Electron](https://www.electronjs.org/) · [React](https://react.dev/) · [Vite](https://vitejs.dev/) · [zustand](https://zustand-demo.pmnd.rs/)
+- 图标为手写 SVG，无第三方图标库依赖
