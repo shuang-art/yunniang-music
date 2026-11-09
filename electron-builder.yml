@@ -1,0 +1,52 @@
+appId: com.yunniang.music
+productName: 云娘音乐
+copyright: Copyright © 2026 yunniang
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - resources/**/*
+  - package.json
+  - node_modules/NeteaseCloudMusicApi/**/*
+  - "!node_modules/NeteaseCloudMusicApi/public/**"
+  - "!node_modules/NeteaseCloudMusicApi/**/*.md"
+  - "!node_modules/NeteaseCloudMusicApi/**/*.test.js"
+  - "!node_modules/NeteaseCloudMusicApi/test/**"
+
+# 内嵌 API 模块必须留在 asar 内，这样它能正常解析 express 等依赖
+asar: true
+
+linux:
+  target:
+    - AppImage
+    - deb
+  category: AudioVideo;Audio;Player
+  icon: resources/icon.png
+  executableName: yunniang-music
+  desktop:
+    Name: 云娘音乐
+    Comment: 网易云音乐 Linux 桌面客户端
+    Categories: AudioVideo;Audio;Player;
+    Keywords: music;netease;player;audio;
+  synopsis: 网易云音乐 Linux 桌面客户端
+  description: 云娘音乐 — 支持账号登录、无损音质、每日推荐、私人雷达、心动模式、私人漫游等功能的网易云音乐桌面客户端。
+  maintainer: yunniang <yunniang@example.com>
+
+deb:
+  depends:
+    - libgtk-3-0
+    - libnotify4
+    - libnss3
+    - libxss1
+    - libxtst6
+    - xdg-utils
+    - libatspi2.0-0
+    - libsecret-1-0
+  afterInstall: build/after-install.sh
+
+appImage:
+  artifactName: ${productName}-${version}-${arch}.AppImage
